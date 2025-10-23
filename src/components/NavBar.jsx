@@ -47,8 +47,8 @@ import navIcon2 from "../assets/img/github-brands-solid-full.svg"
             </Nav>
             <span className='navbar-text'>
                 <div className='social-icon'>
-                <Nav.Link href="#Instagram"><img src={navIcon1} alt="#Instagram"/></Nav.Link>
-                <Nav.Link href="#LinkedIn"><img src={navIcon3} alt="#LinkedIn"/></Nav.Link>
+                <Nav.Link href="#Instagram"><img src={navIcon3} alt="#Instagram"/></Nav.Link>
+                <Nav.Link href="#LinkedIn"><img src={navIcon1} alt="#LinkedIn"/></Nav.Link>
                 <Nav.Link href="#Github"><img src={navIcon2} alt="#Github"/></Nav.Link>
                 </div>
                 <button className='contact' onClick={() => console.log(`connect`)}>
