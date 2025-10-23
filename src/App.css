@@ -31,7 +31,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: rgb(99, 95, 95) !important;
+  background-color: rgb(0, 0, 0) !important;
   color: white;
   font-family: 'Centra', sans-serif !important;
   text-align: center;
@@ -54,11 +54,11 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: #000000;
 }
 nav.navbar a.navbar-brand img {
-  width: 120px; 
-  height: auto; /* This keeps the image from being stretched */
+  width: 80px; 
+  height: auto; 
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -191,4 +191,79 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
+}
+
+/************ Banner Css ************/
+.banner {
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  background-image: url('./assets/img/bgimg.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, rgba(183, 185, 226, 0.5)-5.91%, rgba(90, 162, 207, 0.5) 111.58%);
+  border: 1px solid #5c80c9;
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+  color: #000000;
+}
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+  color: #fff;
+}
+.banner p {
+  color: #5c80c9;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+.banner button {
+  color: white;
+  font-weight: 550;
+  font-size: 25px;
+  margin-top: 60px;
+  letter-spacing: 0.9px;
+  display: flex;
+  align-items: center;
+  background-color: #121212;
+}
+.banner button svg {
+  font-size: 20px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner button:hover svg {
+  margin-left: 25px;
+}
+.banner img {
+  animation: updown 5s linear infinite;
+  max-width: 300px;
+  height: auto;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
 }
