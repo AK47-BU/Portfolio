@@ -1,17 +1,18 @@
 /************ Custom fonts ************/
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/assets/img/fonts/CentraNo2-Bold.ttf');
+  src: url('./assets/img/fonts/CentraNo2-Bold.ttf');
   font-weight: 700;
 }
+
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/assets/img/fonts/CentraNo2-Medium.ttf');
+  src: url('./assets/img/fonts/CentraNo2-Medium.ttf');
   font-weight: 500;
 }
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/assets/img/fonts/CentraNo2-Book.ttf');
+  src: url('./assets/img/fonts/CentraNo2-Book.ttf');
   font-weight: 400;
 }
 
@@ -30,9 +31,10 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: black !important;
+  background-color: rgb(99, 95, 95) !important;
   color: white;
   font-family: 'Centra', sans-serif !important;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,14 +56,15 @@ nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
-nav.navbar a.navbar-brand {
-    width: 9%;
+nav.navbar a.navbar-brand img {
+  width: 120px; 
+  height: auto; /* This keeps the image from being stretched */
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
+  padding: 18px 25px;
   font-size: 18px;
   opacity: 0.75;
 }
