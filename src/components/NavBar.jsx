@@ -6,13 +6,17 @@ import logo from "../assets/img/404pfpnew.jpg"
 import navIcon1 from "../assets/img/nav-icon1.svg"
 import navIcon3 from "../assets/img/nav-icon3.svg"
 import navIcon2 from "../assets/img/github-brands-solid-full.svg"
-
+// Define the NavBar component.
     export const NavBar = () => {
+        // State to track the active navigation link, defaulting to 'home'.
         const [activelink, setActiveLink] = useState(`home`);
+        // State to track if the page has been scrolled.
         const [scrolled, seScrolled] = useState(false);
-
+// useEffect hook to handle scroll events.
         useEffect(() => {
+            // Function to run on scroll.
             const onScroll = () => {
+                // If scrolled more than 50px, set scrolled state to true.
                 if (window.scrollY > 50) {
                     seScrolled(true);
                 } else {
@@ -31,6 +35,7 @@ import navIcon2 from "../assets/img/github-brands-solid-full.svg"
         }
         
         return (
+            // Navbar component from react-bootstrap, dynamically applying 'scrolled' class.
         <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
         <Container>
             <Navbar.Brand href="#home">

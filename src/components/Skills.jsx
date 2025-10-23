@@ -3,8 +3,10 @@ import { Container, Row, Col} from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+// Define the Skills component.
 export const Skills = () => {
 
+    // Configuration for the responsive behavior of the carousel.
     const responsive = {
         superLargeDesktop: {
           
@@ -26,7 +28,7 @@ export const Skills = () => {
       };
 
       return(
-        <section className="skill" id="skills">
+        <section className="skill" id="Skills">
             <Container>
                 <Row>
                     <Col>
