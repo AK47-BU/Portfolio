@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState, useEffect } from 'react';
-import logo from "../assets/img/404pfpnew.jpg"
+import logo from "../assets/img/Logo.png"
 import navIcon1 from "../assets/img/nav-icon1.svg"
 import navIcon3 from "../assets/img/nav-icon3.svg"
 import navIcon2 from "../assets/img/github-brands-solid-full.svg"
@@ -56,9 +56,9 @@ import navIcon2 from "../assets/img/github-brands-solid-full.svg"
                 <Nav.Link href="#LinkedIn"><img src={navIcon1} alt="#LinkedIn"/></Nav.Link>
                 <Nav.Link href="#Github"><img src={navIcon2} alt="#Github"/></Nav.Link>
                 </div>
-                <button className='contact' onClick={() => console.log(`connect`)}>
+                <a href="#connect" className='contact'>
                 <span>Let's connect</span>
-                </button>
+                </a>
                 
             </span>
             </Navbar.Collapse>

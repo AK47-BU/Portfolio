@@ -80,7 +80,9 @@ I’ve had a taste of this in a competitive project with BAE Systems, where I wa
 Alongside my technical studies in Python, SQL, and Network Security, I balance my time as a Part-time Manager. This role has been invaluable, teaching me how to lead a team, manage daily operations, and solve problems under pressure—skills that are just as critical in a security operations center as they are in retail.
 
 I'm now actively seeking a placement where I can merge these two sides of my experience: my technical aptitude and my proven ability to lead. I'm eager to learn from industry experts and make a tangible contribution to a dynamic security team.</p>
-                        <button onClick={() => console.log("connect")}>Let's Connect! <ArrowRightCircle size={25}/> </button>
+                    <a href="#connect" className="banner-connect-btn" onClick={() => onUpdateActiveLink('connect')}>
+                    Let's Connect! <ArrowRightCircle size={25}/>
+                    </a>
                    </Col> 
                    <Col xs={12} md={6} xl={5}>
                         <img src={headerimg} alt="Header Img" />
