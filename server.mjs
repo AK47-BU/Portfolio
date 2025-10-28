@@ -21,7 +21,6 @@ app.use("/", router);
 // --- API Endpoint ---
 router.post("/contact", (req, res) => {
   
-  // --- Create Nodemailer setup *inside* the handler ---
   const contactEmail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -37,9 +36,7 @@ router.post("/contact", (req, res) => {
       console.log("Ready to Send");
     }
   });
-  // ---------------------------------------------------
 
-  // Extract form data
   const name = req.body.firstName + " " + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
@@ -56,7 +53,6 @@ router.post("/contact", (req, res) => {
            <p>Message: ${message}</p>`,
   };
 
-  // Send the email
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       console.error("Error sending email:", error);
@@ -74,4 +70,10 @@ app.get('*', (req, res) => {
 
 // --- Start Server ---
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
+
+//
+// THE FIX IS HERE: We added '0.0.0.0' to this line.
+//
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server Running on Port ${PORT} and listening on 0.0.0.0`);
+});
