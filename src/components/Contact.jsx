@@ -31,7 +31,7 @@ export const Contact = () => {
     setButtonText("Sending..."); // Update button text to give user feedback
     
     // Use 'fetch' to send a POST request to the backend server endpoint
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch("/api/contact", {
       method: "POST", // Specify the request method
       headers: {
         // Indicate that the request body is JSON
@@ -48,7 +48,7 @@ export const Contact = () => {
     // Check the response code from the server
     if (result.code == 200) {
       // Set a success message
-      setStatus({ succes: true, message: 'Message sent successfully' });
+      setStatus({ success: true, message: 'Message sent successfully' });
     } else {
       // Set an error message
       setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
