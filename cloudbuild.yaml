@@ -12,3 +12,7 @@ images:
 - 'europe-west1-docker.pkg.dev/my-portfolio-476501/cloud-run-source-deploy/portfolio/adamkportfolio:$COMMIT_SHA'
 options:
   logging: CLOUD_LOGGING_ONLY
+
+
+
+  
