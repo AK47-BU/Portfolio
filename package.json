@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "engines": {
-    "node": "22"
+    "node": "18"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
