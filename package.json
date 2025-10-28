@@ -10,9 +10,6 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "engines": {
-    "node": "18"
-  },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
