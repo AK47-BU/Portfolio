@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args:
+  - 'build'
+  - 'europe-west1-docker.pkg.dev/my-portfolio-476501/cloud-run-source-deploy/portfolio/adamkportfolio:$COMMIT_SHA'
+  - '--builder=gcr.io/buildpacks/builder'
+  - '--path=.'
+  - '--env'
+  - 'GOOGLE_NODEJS_VERSION=18'
+images:
+- 'europe-west1-docker.pkg.dev/my-portfolio-476501/cloud-run-source-deploy/portfolio/adamkportfolio:$COMMIT_SHA'
