@@ -18,7 +18,9 @@ app.use(express.json());
 app.use("/", router);
 
 // Start the server and listen for connections on port 5000
-app.listen(5000, () => console.log("Server Running on Port 5000"));
+// Get the port from the environment variable, or default to 5000
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
 
 // --- Nodemailer Configuration ---
 
