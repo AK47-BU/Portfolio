@@ -1,15 +1,21 @@
-require('dotenv').config(); 
-const express = require("express");
-const router = express.Router();
-const cors = require("cors");
-const nodemailer = require("nodemailer"); // <-- Just import it
-const path = require("path");
+import 'dotenv/config'; // ES Module way to load dotenv
+import express from 'express';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+import path from 'path';
+import { fileURLToPath } from 'url'; // Required to replicate __dirname
+
+// --- Replicate __dirname for ES Modules ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // --- Server Setup ---
 const app = express();
+const router = express.Router(); // Define router
+
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist'))); // Serve React's build files
 app.use("/", router);
 
 // --- API Endpoint ---
@@ -24,11 +30,9 @@ router.post("/contact", (req, res) => {
     },
   });
 
-  // Verify it here
   contactEmail.verify((error) => {
     if (error) {
       console.log("Error verifying transporter:", error);
-      // Don't stop, just log the error
     } else {
       console.log("Ready to Send");
     }
@@ -69,6 +73,5 @@ app.get('*', (req, res) => {
 });
 
 // --- Start Server ---
-// This part is correct and MUST be at the end
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server Running on Port ${PORT}`));
