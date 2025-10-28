@@ -1,22 +1,37 @@
-
-// Load environment variables (like email credentials) from a .env file
+// // Load environment variables (like email credentials) from a .env file
 require('dotenv').config(); 
-const express = require("express"); // Import the Express.js framework
+const express = require("express");
+// // Import the Express.js framework
 const router = express.Router(); // Create a new router object to handle routes
-const cors = require("cors"); // Import CORS middleware to allow cross-origin requests
-const nodemailer = require("nodemailer"); // Import Nodemailer to send emails
+const cors = require("cors");
+// // Import CORS middleware to allow cross-origin requests
+const nodemailer = require("nodemailer");
+// // Import Nodemailer to send emails
+const path = require("path"); // <-- ADD THIS LINE to work with file paths
 
 // --- Server Setup ---
 
 // Initialize the Express application
 const app = express();
-// Enable CORS middleware for all routes to allow requests from your frontend
+// // Enable CORS middleware for all routes to allow requests from your frontend
 app.use(cors());
-// Enable middleware to parse incoming JSON request bodies (e.g., from your form)
+// // Enable middleware to parse incoming JSON request bodies (e.g., from your form)
 app.use(express.json());
-// Mount the router on the root path. All routes defined in `router` will be prefixed with "/"
+
+// --- ADD THESE LINES TO SERVE YOUR REACT APP ---
+// Serve the static files from the React build folder
+app.use(express.static(path.join(__dirname, 'dist')));
+// ------------------------------------------------
+
+// // Mount the router on the root path. All routes defined in `router` will be prefixed with "/"
 app.use("/", router);
 
+// --- ADD THIS CATCH-ALL ROUTE ---
+// For any GET request that isn't for a static file, send back index.html
+// This is needed for React's client-side routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 // Start the server and listen for connections on port 5000
 // Get the port from the environment variable, or default to 5000
 const PORT = process.env.PORT || 5000;
