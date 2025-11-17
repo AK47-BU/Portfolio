@@ -11,11 +11,13 @@ export const Projects = () => {
       title: "My Portfolio",
       description: "A display of my skills of full stack web development",
       imgUrl: projImg1,
+      projectUrl: "https://github.com/AK47-BU/Portfolio"
     },
     {
       title: "Socrates AI chatbot",
       description: "University group project on developing a historical figure chatbot",
       imgUrl: projImg2,
+      projectUrl: "https://github.com/AK47-BU/SocraticAI"
     },
     /*{
       title: "",

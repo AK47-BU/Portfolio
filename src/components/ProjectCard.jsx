@@ -1,19 +1,27 @@
 import { Col } from "react-bootstrap";
 
-// Define and export the ProjectCard component
-// It receives title, description, and imgUrl as props
-export const ProjectCard = ({ title, description, imgUrl }) => {
+export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
   return (
-    // Bootstrap column for responsive layout
     <Col size={12} sm={6} md={4}>
-      {/* Container for the project image and text overlay */}
       <div className="proj-imgbx">
-        {/* The project image */}
         <img src={imgUrl} alt={title} />
-        {/* Container for the text that appears on hover */}
         <div className="proj-txtx">
           <h4>{title}</h4>
           <span>{description}</span>
+          
+          
+          <div style={{ marginTop: "15px" }}>
+            <a 
+              href={projectUrl} 
+              target="_blank" 
+              rel="noreferrer" 
+              style={{ color: '#fff', textDecoration: 'none', border: '1px solid #fff', padding: '8px 16px', borderRadius: '5px' }}
+            >
+              View on GitHub
+            </a>
+          </div>
+          
+
         </div>
       </div>
     </Col>
