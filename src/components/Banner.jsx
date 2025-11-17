@@ -73,13 +73,13 @@ export const Banner = () => {
                    <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
                         <h1>{"Hi I'm Adam"}</h1><span className="wrap">{text}</span>
-                        <p>a second-year Cybersecurity Management student at Bournemouth University. I’m not just passionate about the theory of security; I’m driven to build and defend the practical solutions that organizations rely on.
+                        <p>a Cybersecurity Management student at Bournemouth University, I am driven to bridge the gap between technical security and operational leadership.
 
-I’ve had a taste of this in a competitive project with BAE Systems, where I was responsible for designing and building an SQL database from the ground up and developing its HTML front-end. Taking that system from initial client interviews to a final prototype for industry judges was a fantastic experience.
+I take a proactive approach to my development, constantly expanding my scope within the wider computing field. I have validated my core skills through industry exposure—including a group competition with BAE Systems—but I also actively challenge myself with new disciplines. I enjoy stepping into areas like software development to test my abilities, a mindset reflected in the custom build of this portfolio.
 
-Alongside my technical studies in Python, SQL, and Network Security, I balance my time as a Part-time Manager. This role has been invaluable, teaching me how to lead a team, manage daily operations, and solve problems under pressure—skills that are just as critical in a security operations center as they are in retail.
+However, my experience extends beyond the terminal. Working concurrently as a Part-time Manager has taught me how to lead teams and solve complex problems in high-pressure environments.
 
-I'm now actively seeking a placement where I can merge these two sides of my experience: my technical aptitude and my proven ability to lead. I'm eager to learn from industry experts and make a tangible contribution to a dynamic security team.</p>
+I am now looking for a placement year where I can merge these two sides of my experience: technical defense and proven leadership.</p>
                     <a href="#connect" className="banner-connect-btn" onClick={() => onUpdateActiveLink('connect')}>
                     Let's Connect! <ArrowRightCircle size={25}/>
                     </a>

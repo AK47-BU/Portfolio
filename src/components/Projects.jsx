@@ -2,21 +2,22 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import TrackVisibility from 'react-on-screen';
 import projImg1 from "../assets/img/PJimg1.jpg"
+import projImg2 from "../assets/img/PJimg2.jpg"
 
 export const Projects = () => {
 
   const projects = [
     {
       title: "My Portfolio",
-      description: "Full stack Web Development",
-      imgUrl: projImg1,
-    },
-    /*{
-      title: "",
-      description: "",
+      description: "A display of my skills of full stack web development",
       imgUrl: projImg1,
     },
     {
+      title: "Socrates AI chatbot",
+      description: "University group project on developing a historical figure chatbot",
+      imgUrl: projImg2,
+    },
+    /*{
       title: "",
       description: "",
       imgUrl: projImg1,
