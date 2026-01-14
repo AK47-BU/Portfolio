@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import TrackVisibility from 'react-on-screen';
 import projImg1 from "../assets/img/PJimg1.jpg"
 import projImg2 from "../assets/img/PJimg2.jpg"
+import projImg3 from "../assets/img/Monzo.jpg"
 
 export const Projects = () => {
 
@@ -19,7 +20,18 @@ export const Projects = () => {
       imgUrl: projImg2,
       projectUrl: "https://github.com/AK47-BU/SocraticAI"
     },
+    {
+      title: "Monzo-Style-MFA-Prototype",
+      description: "Multi-Factor Authentication (MFA) system designed to mitigate Credential Harvesting and Brute Force attacks.",
+      imgUrl: projImg3,
+      projectUrl: "https://github.com/AK47-BU/Monzo-Style-MFA-Prototype"
+    },
+    
+    
+    
     /*{
+
+
       title: "",
       description: "",
       imgUrl: projImg1,
