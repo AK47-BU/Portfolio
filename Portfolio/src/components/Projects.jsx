@@ -32,11 +32,7 @@ export const Projects = () => {
       description: "",
       imgUrl: projImg1,
     },
-    {
-      title: "",
-      description: "",
-      imgUrl: projImg1,
-    },
+    =
     
     {
       title: "",
