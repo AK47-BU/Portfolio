@@ -9,11 +9,9 @@ export default defineConfig({
     proxy: {
       // String shorthand: '/api' -> 'http://localhost:5000'
       '/api': {
-        target: 'http://localhost:5000', // Your local backend server
+        target: 'http://localhost:5000', // Local Express backend (server.mjs)
         changeOrigin: true,
-        // Rewrite '/api/contact' to just '/contact'
-        // because your local server.mjs doesn't have '/api' in its route
-        rewrite: (path) => path.replace(/^\/api/, ''), 
+        // No rewrite: server.mjs serves the route at '/api/contact', matching prod
       },
     }
   }

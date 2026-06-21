@@ -1,29 +1,32 @@
-import { Col } from "react-bootstrap";
+import { motion } from "framer-motion";
+import { Github, ArrowRight } from "react-bootstrap-icons";
 
-export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
+export const ProjectCard = ({ title, description, imgUrl, projectUrl, tags = [], index = 0 }) => {
   return (
-    <Col size={12} sm={6} md={4}>
-      <div className="proj-imgbx">
+    <motion.div
+      className="proj-card"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
+    >
+      <div className="proj-card-imgbx">
         <img src={imgUrl} alt={title} />
-        <div className="proj-txtx">
-          <h4>{title}</h4>
-          <span>{description}</span>
-          
-          
-          <div style={{ marginTop: "15px" }}>
-            <a 
-              href={projectUrl} 
-              target="_blank" 
-              rel="noreferrer" 
-              style={{ color: '#fff', textDecoration: 'none', border: '1px solid #fff', padding: '8px 16px', borderRadius: '5px' }}
-            >
-              View on GitHub
-            </a>
-          </div>
-          
-
-        </div>
       </div>
-    </Col>
+      <div className="proj-card-body">
+        <h4>{title}</h4>
+        <span>{description}</span>
+        {tags.length > 0 && (
+          <div className="proj-tags">
+            {tags.map((tag) => (
+              <span className="proj-tag" key={tag}>{tag}</span>
+            ))}
+          </div>
+        )}
+        <a className="proj-card-link" href={projectUrl} target="_blank" rel="noreferrer">
+          <Github /> View on GitHub <ArrowRight />
+        </a>
+      </div>
+    </motion.div>
   )
 }
