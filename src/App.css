@@ -596,3 +596,65 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   .banner .hero-cta { justify-content: center; }
   .banner .hero-lead { margin-left: auto; margin-right: auto; }
 }
+
+/************ Accessibility + microinteractions ************/
+/* Visible keyboard focus (skip mouse clicks via :focus-visible) */
+a:focus-visible,
+button:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+.contact form input:focus-visible,
+.contact form textarea:focus-visible {
+  outline: none; /* already shows a focus ring via box-shadow */
+}
+
+/* Press feedback */
+.banner-connect-btn:active,
+.banner-ghost-btn:active,
+.contact form button:active,
+.navbar-text a.contact:active {
+  transform: scale(0.97);
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad);
+  transform-origin: 0%;
+  z-index: 10000;
+}
+
+/* Animated nav-link underline (slides in on hover + active section) */
+nav.navbar .navbar-nav .nav-link.navbar-link { position: relative; }
+nav.navbar .navbar-nav .nav-link.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 18px; right: 18px; bottom: 2px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link:hover::after,
+nav.navbar .navbar-nav .nav-link.navbar-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Respect the user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .banner .wrap { border-right-color: transparent; }
+  .scroll-progress { display: none; }
+}

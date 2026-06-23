@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { ArrowRightCircle } from "react-bootstrap-icons"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import profileImg from "../assets/img/adam.jpg"
 
 // Define the Banner component.
@@ -13,6 +13,11 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
+
+    // Subtle hero-photo parallax (disabled when the user prefers reduced motion).
+    const { scrollY } = useScroll();
+    const reduce = useReducedMotion();
+    const photoY = useTransform(scrollY, [0, 500], [0, reduce ? 0 : -40]);
 
     useEffect(() => {
         let ticker = setInterval(() => { tick(); }, delta);
@@ -61,6 +66,7 @@ export const Banner = () => {
                     <Col xs={12} md={6} xl={5}>
                         <motion.div
                             className="hero-photo"
+                            style={{ y: photoY }}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

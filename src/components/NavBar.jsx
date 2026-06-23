@@ -16,6 +16,23 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [])
 
+    // Scroll-spy: highlight whichever section is currently in view.
+    useEffect(() => {
+        const ids = ['home', 'about', 'skills', 'projects'];
+        const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
+        if (!sections.length) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) setActiveLink(entry.target.id);
+                });
+            },
+            { rootMargin: '-45% 0px -50% 0px' } // thin band near viewport centre
+        );
+        sections.forEach((s) => observer.observe(s));
+        return () => observer.disconnect();
+    }, [])
+
     const onUpdateActiveLink = (value) => { setActiveLink(value); }
 
     return (
