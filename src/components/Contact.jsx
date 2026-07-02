@@ -76,6 +76,7 @@ export const Contact = () => {
             >
               <span className="section-label">// 04 — Get in touch</span>
               <h2>Get In Touch</h2>
+              <p className="contact-note">The form works — I built the backend myself. Messages land straight in my inbox.</p>
               <form onSubmit={handleSubmit}>
                 {/* Honeypot field — visually hidden; real users never fill it, bots do */}
                 <input

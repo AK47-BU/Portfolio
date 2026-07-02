@@ -32,10 +32,9 @@ export const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <p>I&apos;m a Cybersecurity Management student at Bournemouth University, driven to bridge the gap between technical security and operational leadership.</p>
-              <p>I take a proactive approach to my development, constantly expanding my scope within the wider computing field. Beyond industry exposure such as a group competition with BAE Systems, I&apos;ve built several full-stack development projects at university, including a React and JavaScript AI chatbot and a multi-factor authentication system, putting my skills into practice.</p>
-              <p>My experience also extends beyond the terminal. Working concurrently as a Part-time Manager has taught me how to lead teams and solve complex problems in high-pressure environments.</p>
-              <p>Now in my third year and predicted a First, I&apos;m focused on sharpening both sides of my experience, hands-on development and technical security, through my degree and my own projects.</p>
+              <p>I&apos;m in my third year studying Cybersecurity Management at Bournemouth University, currently predicted a First. The course covers both the technical side of security and how it gets run in practice, and I&apos;ve ended up caring about both.</p>
+              <p>Most of what I know about software came from building it. At uni I&apos;ve made a chatbot that debates you in the style of Socrates, an MFA prototype based on Monzo&apos;s login flow, and this site, all in React and JavaScript. A group competition with BAE Systems gave me my first proper look at how the industry works.</p>
+              <p>Alongside uni I work as a part-time manager. It mostly means solving problems that won&apos;t wait, and it has taught me more about leading people than any module could.</p>
               <div className="about-aside">
                 <span className="section-label">// beyond the terminal</span>
                 <p>Away from the keyboard, I&apos;m an avid gym-goer and try to get out on the golf course whenever I can. I&apos;m also a keen gamer, equally happy with an immersive story-driven game or something competitive online, and a big music fan who&apos;s slowly building up a vinyl collection.</p>

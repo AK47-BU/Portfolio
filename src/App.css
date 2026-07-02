@@ -208,10 +208,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   position: relative;
   padding: 220px 0 130px 0;
   overflow: hidden;
+  /* No opaque base — lets the site-wide aurora show through */
   background:
-    radial-gradient(60% 50% at 50% -10%, rgba(52, 211, 153, 0.12), transparent 70%),
-    radial-gradient(45% 45% at 85% 15%, rgba(16, 185, 129, 0.10), transparent 70%),
-    var(--bg);
+    radial-gradient(60% 50% at 50% -10%, rgba(52, 211, 153, 0.10), transparent 70%),
+    radial-gradient(45% 45% at 85% 15%, rgba(16, 185, 129, 0.08), transparent 70%);
 }
 .banner::before {
   content: "";
@@ -258,6 +258,63 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   letter-spacing: -1px;
   margin-bottom: 8px;
   color: #fff;
+}
+/* Hand-drawn marker underline beneath the name */
+.banner h1 .grad-text {
+  position: relative;
+  white-space: nowrap;
+}
+.banner h1 .grad-text::after {
+  content: "";
+  position: absolute;
+  left: 2%; right: 2%; bottom: -0.12em;
+  height: 0.22em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 Q 28 3.5 62 7 T 117 4.5' fill='none' stroke='%2334d399' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  opacity: 0.9;
+  pointer-events: none;
+}
+/* Site-wide aurora: soft drifting light blobs behind all content */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+.aurora-a {
+  width: 640px; height: 640px;
+  top: -12%; right: -10%;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.075), transparent 62%);
+  animation: aurora-drift-a 34s ease-in-out infinite alternate;
+}
+.aurora-b {
+  width: 560px; height: 560px;
+  bottom: -14%; left: -12%;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.06), transparent 62%);
+  animation: aurora-drift-b 42s ease-in-out infinite alternate;
+}
+.aurora-c {
+  width: 460px; height: 460px;
+  top: 38%; left: 32%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.045), transparent 62%);
+  animation: aurora-drift-c 27s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift-a {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-120px, 90px); }
+}
+@keyframes aurora-drift-b {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, -70px); }
+}
+@keyframes aurora-drift-c {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(70px, -50px) scale(1.15); }
 }
 .banner .wrap {
   display: inline-block;
@@ -316,6 +373,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   z-index: 1;
   border: 1px solid var(--border-strong);
   filter: saturate(1.05) contrast(1.02);
+  transform: rotate(1.4deg);
+  transition: transform 0.35s ease;
+}
+.banner .hero-photo:hover img {
+  transform: rotate(0deg);
 }
 .banner .hero-photo::before {
   content: "";
@@ -325,6 +387,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   border-radius: 18px;
   opacity: 0.55;
   z-index: 0;
+  transform: rotate(-1deg);
 }
 
 /************ Section shell ************/
@@ -370,6 +433,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   border-color: var(--accent);
   background: var(--card-hover);
 }
+/* Alternating tilt on hover — a small, deliberate irregularity */
+.skill-card:nth-child(odd):hover { transform: translateY(-6px) rotate(-1deg); }
+.skill-card:nth-child(even):hover { transform: translateY(-6px) rotate(1deg); }
 .skill-card .skill-icon {
   width: 58px; height: 58px;
   display: flex; align-items: center; justify-content: center;
@@ -387,17 +453,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
   color: #fff;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
-  text-align: center;
+  text-align: left;
 }
 .project p.project-intro {
   color: var(--text-muted);
   font-size: 17px;
   line-height: 1.7;
-  margin: 16px auto 50px auto;
-  text-align: center;
+  margin: 16px 0 50px 0;
+  text-align: left;
   max-width: 640px;
 }
-.project .project-head { text-align: center; }
+.project .project-head { text-align: left; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -469,8 +535,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
 .contact h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
   color: #fff;
+}
+.contact .contact-note {
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin-bottom: 26px;
 }
 .contact form input, .contact form textarea {
   width: 100%;
@@ -529,6 +601,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
 }
 .footer img { width: 56px; height: auto; }
 .footer p { color: var(--text-dim); font-size: 14px; margin: 0; }
+.footer .footer-meta { text-align: right; }
+.footer .footer-sig { font-family: var(--mono); font-size: 12.5px; color: var(--accent); opacity: 0.75; margin-top: 4px; }
+@media (max-width: 991px) {
+  .footer .footer-meta { text-align: center; }
+}
 
 /************ Responsive ************/
 @media (max-width: 991px) {
@@ -549,7 +626,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { border-c
 
 /************ About ************/
 .about { padding: 90px 0 30px; position: relative; }
-.about-head { text-align: center; margin-bottom: 44px; }
+.about-head { text-align: left; margin-bottom: 44px; }
 .about h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; }
 .about-row { align-items: flex-start; }
 .about-bio p { color: var(--text-muted); font-size: 17px; line-height: 1.75; margin-bottom: 16px; }

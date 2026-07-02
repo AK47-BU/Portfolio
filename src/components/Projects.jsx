@@ -10,21 +10,21 @@ export const Projects = () => {
   const projects = [
     {
       title: "My Portfolio",
-      description: "A display of my skills of full stack web development",
+      description: "This site. React and Vite up front, a serverless contact API with rate limiting behind it, designed and coded by me.",
       imgUrl: projImg1,
       projectUrl: "https://github.com/AK47-BU/Portfolio",
       tags: ["React", "Vite", "Node.js"]
     },
     {
       title: "Socrates AI chatbot",
-      description: "University group project on developing a historical figure chatbot",
+      description: "Group project: a chatbot that debates you in the style of Socrates. React front end, JavaScript throughout.",
       imgUrl: projImg2,
       projectUrl: "https://github.com/AK47-BU/SocraticAI",
       tags: ["React", "JavaScript", "AI"]
     },
     {
       title: "Monzo-Style-MFA-Prototype",
-      description: "Multi-Factor Authentication (MFA) system designed to mitigate Credential Harvesting and Brute Force attacks.",
+      description: "A Monzo-style MFA login flow, built to blunt credential harvesting and brute-force attacks.",
       imgUrl: projImg3,
       projectUrl: "https://github.com/AK47-BU/Monzo-Style-MFA-Prototype",
       tags: ["React", "JavaScript", "Security"]
@@ -45,7 +45,7 @@ export const Projects = () => {
             >
               <span className="section-label">// 03 — Selected work</span>
               <h2>Projects</h2>
-              <p className="project-intro">This section showcases a curated selection of projects, both completed and in progress, that demonstrate my practical application of skills I have learnt myself and at University</p>
+              <p className="project-intro">Things I&apos;ve actually built. Coursework, group projects, and the site you&apos;re reading right now.</p>
             </motion.div>
             <div className="projects-grid">
               {projects.map((project, index) => (

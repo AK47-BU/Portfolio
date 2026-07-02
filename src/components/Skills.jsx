@@ -31,7 +31,7 @@ export const Skills = () => {
                         >
                             <span className="section-label">// 02 — Expertise</span>
                             <h2>Main Skills</h2>
-                            <p>I bring a diverse range of technical and professional skills to every project. Below are some of the core competencies I leverage to build, secure, and manage modern applications, and I am continually focused on developing these skills even further.</p>
+                            <p>The tools I reach for most. Some came from lectures; most came from projects that refused to work until 2am.</p>
                             <div className="skills-grid">
                                 {skills.map((skill, i) => (
                                     <motion.div

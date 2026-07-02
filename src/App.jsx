@@ -1,5 +1,6 @@
 import "./App.css"
 import { MotionConfig } from "framer-motion";
+import { Aurora } from "./components/Aurora";
 import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,6 +15,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className='App'>
+        <Aurora />
         <ScrollProgress />
         <NavBar />
         <Banner />

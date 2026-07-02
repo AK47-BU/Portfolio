@@ -54,7 +54,7 @@ export const Banner = () => {
                         >
                             <h1>Hi, I&apos;m <span className="grad-text">Adam</span></h1>
                             <span className="wrap">{text}</span>
-                            <p className="hero-lead">A third-year Cybersecurity Management student blending security, full-stack development, and leadership.</p>
+                            <p className="hero-lead">Third-year Cybersecurity Management student at Bournemouth University. I like building the things I&apos;m supposed to be defending.</p>
                             <div className="hero-cta">
                                 <a href="#connect" className="banner-connect-btn">
                                     Let&apos;s Connect! <ArrowRightCircle size={22} />

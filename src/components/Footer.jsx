@@ -15,7 +15,10 @@ export const Footer = () => {
             <a href="https://www.linkedin.com/in/adam-kulik-241035366" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="LinkedIn" /></a>
             <a href="https://github.com/AK47-BU" target="_blank" rel="noopener noreferrer"><img src={navIcon2} alt="GitHub" /></a>
           </div>
-          <p>© {new Date().getFullYear()} Adam Kulik. All rights reserved.</p>
+          <div className="footer-meta">
+            <p>© {new Date().getFullYear()} Adam Kulik</p>
+            <p className="footer-sig">// designed &amp; coded by me</p>
+          </div>
         </div>
       </Container>
     </footer>
