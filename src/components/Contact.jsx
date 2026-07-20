@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import contactImg from "../assets/img/Logo.png";
+import contactImg from "../assets/img/logo.svg";
 
 export const Contact = () => {
   // Define the initial structure for the form's state

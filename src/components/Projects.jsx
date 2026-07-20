@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/PJimg1.jpg"
+import projImg1 from "../assets/img/portfolio-preview.jpg"
 import projImg2 from "../assets/img/PJimg2.jpg"
 import projImg3 from "../assets/img/Monzo.jpg"
 
